@@ -1,0 +1,18 @@
+{
+    "pets": [
+        {
+            "nome": "Max",
+            "especie": "Cachorro",
+            "sexo": "M",
+            "idade": "Filhote",
+            "castrado": true,
+            "vacinado": true,
+            "filhotes": false,
+            "raca": "Salsicha"
+        }
+    ],
+    "especies": [],
+    "sexos": [],
+    "idades": [],
+    "racas": []
+}
