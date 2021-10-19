@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/meus-pets">Meus Pets</router-link>
+    <router-link to="/meus-pets">Meus Pets</router-link> |
+    <router-link to="/cadastro">Cadastre Seu Pet</router-link> 
   </div>
   <router-view/>
 </template>
