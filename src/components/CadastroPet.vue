@@ -1,45 +1,43 @@
 <template>
-  <form id="sub-form">
-  </form>
-  <form id="main-form">
+  <form id="main-form" @submit.prevent="postToPets">
     <div class="form-row">
       <div class="col-2">
         <label for="nome">Nome:</label>
-        <input type="text" class="form-control" v-model="nome" name="nome" placeholder="Nome" />
+        <input required type="text" class="form-control" v-model="nome" name="nome" placeholder="Nome" />
       </div>
       <div class="col-2">
         <label for="especie">Espécie:</label>
-        <select v-model="especie" id="especie" name="especie" class="custom-select">
-          <option value="">Selecione a espécie:</option>
-          <option value="outros">Outros</option>
+        <select required v-model="especie" id="especie" name="especie" class="custom-select">
+          <option v-for="especie in especies" :key="especie.id" :value="especie.tipo">{{especie.tipo}}</option>
         </select>
       </div>
-    </div>
-    <div v-show="especie==='outros'" class="form-row">
-      <div class="col-4">
-        <label for="novaespecie">Adicione uma espécie:</label>
-        <input v-model="novaespecie" type="text" class="form-control" id="novaespecie" name="novaespecie" placeholder="Adicione uma espécie" form="sub-form" />
-      </div>
-    </div>
-    <div v-show="especie==='outros'" class="form-row">
-      <button type="submit" class="btn btn-primary" form="sub-form">Adicionar</button>
     </div>
     <div class="form-row">
       <div class="col-2">
         <label for="sexo">Sexo:</label>
-        <select id="sexo" class="custom-select" name="sexo" v-model="sexo">
-          <option value="">Selecione o sexo:</option>
+        <select required id="sexo" class="custom-select" name="sexo" v-model="sexo">
+          <option v-for="sexo in sexos" :key="sexo.id" :value="sexo.tipo">{{sexo.tipo}}</option>
         </select>
       </div>
       <div class="col-2">
         <label for="idade">Idade:</label>
-        <select id="idade" class="custom-select" name="idade" v-model="idade">
-          <option value="">Selecione a idade:</option>
+        <select required id="idade" class="custom-select" name="idade" v-model="idade">
+          <option v-for="idade in idades" :key="idade.id" :value="idade.tipo">{{idade.tipo}}</option>
         </select>
       </div>
     </div>
     <div class="form-row">
-      <div class="col-1">
+      <div class="col-2">
+        <label required for="dono">Nome do dono:</label>
+        <input v-model="dono" type="text" class="form-control" id="dono" placeholder="Nome do dono" name="dono" />
+      </div>
+      <div class="col-2">
+        <label for="raça">Raça:</label>
+        <input v-model="raca" type="text" class="form-control" id="raca" placeholder="Raça do seu pet" name="raca" />
+      </div>
+    </div>
+    <div class="form-row">
+            <div class="col-1">
         <div class="form-check form-check-inline">
           <input v-model="castrado" class="form-check-input" type="checkbox" name="castrado" value="true" id="castrado" />
           <label for="castrado">Castrado</label>
@@ -59,32 +57,21 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="col-2">
-        <label for="dono">Nome do dono:</label>
-        <input v-model="dono" type="text" class="form-control" id="dono" placeholder="Nome do dono" name="dono" />
-      </div>
-      <div class="col-2">
-        <label for="raça">Raça:</label>
-        <select v-model="raca" id="raça" class="custom-select" name="raça">
-          <option value="">Selecione a raça:</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
       <button type="submit" class="btn btn-primary">Enviar</button>    
     </div>
   </form>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'CadastroPet',
   data () {
     return {
-      especies: null,
-      sexos: null,
-      idades: null,
-      racas: null,
+      especies: [],
+      sexos: [],
+      idades: [],
       nome: null,
       especie: null,
       sexo: null,
@@ -94,11 +81,47 @@ export default {
       vacinado: null,
       gravida: null,
       dono: null,
-      novaespecie: null,
     }
   },
   methods: {
-    
+    async getInfos() {
+      try {
+        const res = await axios.get('http://localhost:3000/infos')
+        this.especies = res.data.especies
+        this.idades = res.data.idades
+        this.sexos = res.data.sexos
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    async postToPets() {
+      const res = await axios.post('http://localhost:3000/pets', {
+        nome: this.nome,
+        especie: this.especie,
+        sexo: this.sexo,
+        idade: this.idade,
+        castrado: this.castrado,
+        vacinado: this.vacinado,
+        gravida: this.gravida,
+        raca: this.raca,
+        dono: this.dono
+      });      
+
+      console.log(res);
+
+      this.nome = null;
+      this.especie = null;
+      this.sexo = null;
+      this.idade = null;
+      this.castrado = null;
+      this.vacinado = null;
+      this.gravida = null;
+      this.raca = null;
+      this.dono = null;
+    }
+  },
+  async created () {
+    this.getInfos()
   }
 }
 </script>

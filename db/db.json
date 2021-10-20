@@ -1,101 +1,128 @@
 {
-    "infos": {
-        "especies": [
-            {
-                "id": 1,
-                "tipo": "Cachorro"
-            },
-            {
-                "id": 2,
-                "tipo": "Gato"
-            },
-            {
-                "id": 3,
-                "tipo": "Peixe"
-            },
-            {
-                "id": 4,
-                "tipo": "Periquito"
-            },
-            {
-                "id": 5,
-                "tipo": "Calopsita"
-            },
-            {
-                "id": 6,
-                "tipo": "Papagaio"
-            },
-            {
-                "id": 7,
-                "tipo": "Galinha"
-            },
-            {
-                "id": 8,
-                "tipo": "Sapo"
-            },
-            {
-                "id": 9,
-                "tipo": "Tartaruga"
-            },
-            {
-                "id": 10,
-                "tipo": "Lagarto"
-            },
-            {
-                "id": 11,
-                "tipo": "Coelho"
-            },
-            {
-                "id": 12,
-                "tipo": "Rato"
-            },
-            {
-                "id": 13,
-                "tipo": "Hamster"
-            },
-            {
-                "id": 14,
-                "tipo": "Porquinho da Índia"
-            }
-        ],
-        "sexos": [
-            {
-                "id": 1,
-                "tipo": "M"
-            },
-            {
-                "id": 2,
-                "tipo": "F"
-            }
-        ],
-        "idades": [
-            {
-                "id": 1,
-                "tipo": "Filhote"
-            },
-            {
-                "id": 2,
-                "tipo": "Adulto"
-            },
-            {
-                "id": 3,
-                "tipo": "Idoso"
-            }
-        ],
-        "racas": {}
-    },
-    "pets": [
-        {
-            "id": 1,
-            "nome": "Max",
-            "especie": "Cachorro",
-            "sexo": "M",
-            "idade": "Filhote",
-            "castrado": true,
-            "vacinado": true,
-            "gravida": false,
-            "raca": "Salsicha",
-            "dono": "Jorge Pereira"
-        }
+  "infos": {
+    "especies": [
+      {
+        "id": 1,
+        "tipo": "Cachorro"
+      },
+      {
+        "id": 2,
+        "tipo": "Gato"
+      },
+      {
+        "id": 3,
+        "tipo": "Peixe"
+      },
+      {
+        "id": 4,
+        "tipo": "Periquito"
+      },
+      {
+        "id": 5,
+        "tipo": "Calopsita"
+      },
+      {
+        "id": 6,
+        "tipo": "Papagaio"
+      },
+      {
+        "id": 7,
+        "tipo": "Galinha"
+      },
+      {
+        "id": 8,
+        "tipo": "Sapo"
+      },
+      {
+        "id": 9,
+        "tipo": "Tartaruga"
+      },
+      {
+        "id": 10,
+        "tipo": "Lagarto"
+      },
+      {
+        "id": 11,
+        "tipo": "Coelho"
+      },
+      {
+        "id": 12,
+        "tipo": "Rato"
+      },
+      {
+        "id": 13,
+        "tipo": "Hamster"
+      },
+      {
+        "id": 14,
+        "tipo": "Porquinho da Índia"
+      },
+      {
+        "id": 15,
+        "tipo": "Outro"
+      }
+    ],
+    "sexos": [
+      {
+        "id": 1,
+        "tipo": "M"
+      },
+      {
+        "id": 2,
+        "tipo": "F"
+      }
+    ],
+    "idades": [
+      {
+        "id": 1,
+        "tipo": "Filhote"
+      },
+      {
+        "id": 2,
+        "tipo": "Adulto"
+      },
+      {
+        "id": 3,
+        "tipo": "Idoso"
+      }
     ]
+  },
+  "pets": [
+    {
+      "id": 1,
+      "nome": "Max",
+      "especie": "Cachorro",
+      "sexo": "M",
+      "idade": "Filhote",
+      "castrado": true,
+      "vacinado": true,
+      "gravida": false,
+      "raca": "Salsicha",
+      "dono": "Jorge Pereira"
+    },
+    {
+      "nome": "Catimba",
+      "especie": "Gato",
+      "sexo": "M",
+      "idade": "Adulto",
+      "castrado": true,
+      "vacinado": true,
+      "gravida": null,
+      "raca": null,
+      "dono": "Carlos Alexandre",
+      "id": 2
+    },
+    {
+      "nome": "Laranja",
+      "especie": "Coelho",
+      "sexo": "F",
+      "idade": "Adulto",
+      "castrado": null,
+      "vacinado": null,
+      "gravida": true,
+      "raca": "",
+      "dono": "Carlos Alexandre",
+      "id": 3
+    }
+  ]
 }
