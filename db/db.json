@@ -108,21 +108,9 @@
       "castrado": true,
       "vacinado": true,
       "gravida": null,
-      "raca": null,
-      "dono": "Carlos Alexandre",
-      "id": 2
-    },
-    {
-      "nome": "Laranja",
-      "especie": "Coelho",
-      "sexo": "F",
-      "idade": "Adulto",
-      "castrado": null,
-      "vacinado": null,
-      "gravida": true,
       "raca": "",
       "dono": "Carlos Alexandre",
-      "id": 3
+      "id": 2
     }
   ]
 }

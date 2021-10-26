@@ -15,3 +15,9 @@ import ListaPets from '@/components/ListaPets.vue'
     }
   }
 </script>
+
+<style scoped>
+.meus-pets {
+  padding: 50px;
+}
+</style>

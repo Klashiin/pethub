@@ -128,12 +128,21 @@ export default {
 
 <style scoped>
 #main-form {
-margin: 10px;
+  margin: 10px;
+  border-left: 2px solid #5E239D;
 }
 button {
-margin: 10px;
+  margin: 10px;
+  background-color: #5E239D;
+  border: 2px #5E239D solid;
+  font-weight: bold;
+}
+button:hover {
+  background-color: transparent;
+  color: #5E239D;
+  border: 2px #5E239D solid;
 }
 .form-row {
-margin: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
 }
 </style>
